@@ -1,0 +1,29 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="dotnet" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Platform.Data.Model\Platform.Data.Model.csproj" />
+    <ProjectReference Include="..\Platform.Utilities\Platform.Utilities.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="2.1.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="2.1.1" />
+    <PackageReference Include="RestSharp" Version="106.11.7" />
+    <PackageReference Include="Swashbuckle.AspNetCore.Swagger" Version="6.2.3" />
+    <PackageReference Include="Swashbuckle.AspNetCore.SwaggerGen" Version="6.2.3" />
+    <PackageReference Include="Swashbuckle.AspNetCore.SwaggerUI" Version="6.2.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Migrations\" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,10 @@
+E:\Repositories\Agha-Steel-backend\Platform.Data.Model\bin\Debug\netcoreapp2.1\Platform.Data.Model.deps.json
+E:\Repositories\Agha-Steel-backend\Platform.Data.Model\bin\Debug\netcoreapp2.1\Platform.Data.Model.dll
+E:\Repositories\Agha-Steel-backend\Platform.Data.Model\bin\Debug\netcoreapp2.1\Platform.Data.Model.pdb
+E:\Repositories\Agha-Steel-backend\Platform.Data.Model\obj\Debug\netcoreapp2.1\Platform.Data.Model.csproj.AssemblyReference.cache
+E:\Repositories\Agha-Steel-backend\Platform.Data.Model\obj\Debug\netcoreapp2.1\Platform.Data.Model.GeneratedMSBuildEditorConfig.editorconfig
+E:\Repositories\Agha-Steel-backend\Platform.Data.Model\obj\Debug\netcoreapp2.1\Platform.Data.Model.AssemblyInfoInputs.cache
+E:\Repositories\Agha-Steel-backend\Platform.Data.Model\obj\Debug\netcoreapp2.1\Platform.Data.Model.AssemblyInfo.cs
+E:\Repositories\Agha-Steel-backend\Platform.Data.Model\obj\Debug\netcoreapp2.1\Platform.Data.Model.csproj.CoreCompileInputs.cache
+E:\Repositories\Agha-Steel-backend\Platform.Data.Model\obj\Debug\netcoreapp2.1\Platform.Data.Model.dll
+E:\Repositories\Agha-Steel-backend\Platform.Data.Model\obj\Debug\netcoreapp2.1\Platform.Data.Model.pdb

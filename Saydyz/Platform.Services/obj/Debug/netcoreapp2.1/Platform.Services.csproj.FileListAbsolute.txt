@@ -1,0 +1,17 @@
+E:\Repositories\Agha-Steel-backend\Platform.Services\bin\Debug\netcoreapp2.1\Platform.Services.deps.json
+E:\Repositories\Agha-Steel-backend\Platform.Services\bin\Debug\netcoreapp2.1\Platform.Services.dll
+E:\Repositories\Agha-Steel-backend\Platform.Services\bin\Debug\netcoreapp2.1\Platform.Services.pdb
+E:\Repositories\Agha-Steel-backend\Platform.Services\bin\Debug\netcoreapp2.1\Platform.Data.Model.dll
+E:\Repositories\Agha-Steel-backend\Platform.Services\bin\Debug\netcoreapp2.1\Platform.Data.Repositories.dll
+E:\Repositories\Agha-Steel-backend\Platform.Services\bin\Debug\netcoreapp2.1\Platform.Utilities.dll
+E:\Repositories\Agha-Steel-backend\Platform.Services\bin\Debug\netcoreapp2.1\Platform.Data.Repositories.pdb
+E:\Repositories\Agha-Steel-backend\Platform.Services\bin\Debug\netcoreapp2.1\Platform.Data.Model.pdb
+E:\Repositories\Agha-Steel-backend\Platform.Services\bin\Debug\netcoreapp2.1\Platform.Utilities.pdb
+E:\Repositories\Agha-Steel-backend\Platform.Services\obj\Debug\netcoreapp2.1\Platform.Services.csproj.AssemblyReference.cache
+E:\Repositories\Agha-Steel-backend\Platform.Services\obj\Debug\netcoreapp2.1\Platform.Services.GeneratedMSBuildEditorConfig.editorconfig
+E:\Repositories\Agha-Steel-backend\Platform.Services\obj\Debug\netcoreapp2.1\Platform.Services.AssemblyInfoInputs.cache
+E:\Repositories\Agha-Steel-backend\Platform.Services\obj\Debug\netcoreapp2.1\Platform.Services.AssemblyInfo.cs
+E:\Repositories\Agha-Steel-backend\Platform.Services\obj\Debug\netcoreapp2.1\Platform.Services.csproj.CoreCompileInputs.cache
+E:\Repositories\Agha-Steel-backend\Platform.Services\obj\Debug\netcoreapp2.1\Platform.Services.dll
+E:\Repositories\Agha-Steel-backend\Platform.Services\obj\Debug\netcoreapp2.1\Platform.Services.pdb
+E:\Repositories\Agha-Steel-backend\Platform.Services\obj\Debug\netcoreapp2.1\Platform.Services.csproj.CopyComplete

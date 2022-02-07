@@ -1,0 +1,148 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Platform.Web.Api</name>
+    </assembly>
+    <members>
+        <member name="M:Platform.Web.Api.Controllers.OrganizationController.AddDepartment(Platform.Web.Api.DTO.RequestDtos.AddDepartmentRequest)">
+            <summary>
+            Add Department
+            </summary>
+            <param name="departmentDto">AddDepartmentRequest</param>
+            <returns>if added, Response.Data is newly created ID</returns>
+        </member>
+        <member name="M:Platform.Web.Api.Controllers.OrganizationController.UpdateDepartment(Platform.Web.Api.DTO.RequestDtos.UpdateDepartmentRequest)">
+            <summary>
+            Update Department
+            </summary>
+            <param name="updateDepartmentRequest">UpdateDepartmentRequest</param>
+            <returns>Updated Department</returns>
+        </member>
+        <member name="M:Platform.Web.Api.Controllers.OrganizationController.GetAllDepartments(System.Nullable{System.Boolean},System.Nullable{System.Int32})">
+            <summary>
+            Get all departments
+            </summary>
+            <returns>All departments list</returns>
+        </member>
+        <member name="M:Platform.Web.Api.Controllers.OrganizationController.GetAllDepartments(System.Int32,System.Int32,System.Nullable{System.Boolean})">
+            <summary>
+            Get all departments
+            </summary>
+            <returns>All departments list</returns>
+        </member>
+        <member name="M:Platform.Web.Api.Controllers.OrganizationController.GetDepartmentById(System.Int32)">
+            <summary>
+            Get Department By Id
+            </summary>
+            <param name="id">Department ID</param>
+            <returns>Department found for given ID</returns>
+        </member>
+        <member name="M:Platform.Web.Api.Controllers.OrganizationController.AddUnit(Platform.Web.Api.DTO.RequestDtos.AddUnitRequest)">
+            <summary>
+            Add Unit
+            </summary>
+            <param name="unitDto">AddUnitRequest</param>
+            <returns>if added, Response.Data is newly created ID</returns>
+        </member>
+        <member name="M:Platform.Web.Api.Controllers.OrganizationController.UpdateUnit(Platform.Web.Api.DTO.RequestDtos.UpdateUnitRequest)">
+            <summary>
+            Update Unit
+            </summary>
+            <param name="updateUnitRequest">UpdateUnitRequest</param>
+            <returns>Updated Unit</returns>
+        </member>
+        <member name="M:Platform.Web.Api.Controllers.OrganizationController.GetAllUnits(System.Nullable{System.Int32},System.Nullable{System.Boolean})">
+            <summary>
+            Get all Units
+            </summary>
+            <returns>All Units list</returns>
+        </member>
+        <member name="M:Platform.Web.Api.Controllers.OrganizationController.GetAllUnits(System.Int32,System.Int32,System.Nullable{System.Boolean})">
+            <summary>
+            Get all Units
+            </summary>
+            <returns>All Units list</returns>
+        </member>
+        <member name="M:Platform.Web.Api.Controllers.OrganizationController.GetUnitById(System.Int32)">
+            <summary>
+            Get Unit By Id
+            </summary>
+            <param name="id">Unit ID</param>
+            <returns>Unit found for given ID</returns>
+        </member>
+        <member name="M:Platform.Web.Api.Controllers.OrganizationController.AddGroup(Platform.Web.Api.DTO.RequestDtos.AddGroupRequest)">
+            <summary>
+            Add Group
+            </summary>
+            <param name="groupRequestDto">AddGroupRequest</param>
+            <returns>if added, Response.Data is newly created ID</returns>
+        </member>
+        <member name="M:Platform.Web.Api.Controllers.OrganizationController.UpdateGroup(Platform.Web.Api.DTO.RequestDtos.UpdateGroupRequest)">
+            <summary>
+            Update Group
+            </summary>
+            <param name="updateGroupRequest">UpdateGroupRequest</param>
+            <returns>Updated Group</returns>
+        </member>
+        <member name="M:Platform.Web.Api.Controllers.OrganizationController.GetAllGroups(System.Nullable{System.Boolean})">
+            <summary>
+            Get all Groups
+            </summary>
+            <returns>All Groups list</returns>
+        </member>
+        <member name="M:Platform.Web.Api.Controllers.OrganizationController.GetAllGroups(System.Int32,System.Int32,System.Nullable{System.Boolean})">
+            <summary>
+            Get all Groups
+            </summary>
+            <returns>All Groups list</returns>
+        </member>
+        <member name="M:Platform.Web.Api.Controllers.OrganizationController.GetGroupById(System.Int32)">
+            <summary>
+            Get Group By Id
+            </summary>
+            <param name="id">Group ID</param>
+            <returns>Group found for given ID</returns>
+        </member>
+        <member name="M:Platform.Web.Api.Controllers.OrganizationController.AddDesignation(Platform.Web.Api.DTO.RequestDtos.AddDesignationRequest)">
+            <summary>
+            Add Designation
+            </summary>
+            <param name="designationRequestDto">AddDesignationRequest</param>
+            <returns>if added, Response.Data is newly created ID</returns>
+        </member>
+        <member name="M:Platform.Web.Api.Controllers.OrganizationController.UpdateDesignation(Platform.Web.Api.DTO.RequestDtos.UpdateDesignationRequest)">
+            <summary>
+            Update Designation
+            </summary>
+            <param name="updateDesignationRequest">UpdateDesignationRequest</param>
+            <returns>Updated Designation</returns>
+        </member>
+        <member name="M:Platform.Web.Api.Controllers.OrganizationController.GetAllDesignations">
+            <summary>
+            Get all Designations
+            </summary>
+            <returns>All Designations list</returns>
+        </member>
+        <member name="M:Platform.Web.Api.Controllers.OrganizationController.GetAllDesignations(System.Int32,System.Int32)">
+            <summary>
+            Get all Designations
+            </summary>
+            <returns>All Designations list</returns>
+        </member>
+        <member name="M:Platform.Web.Api.Controllers.OrganizationController.GetDesignationById(System.Int32)">
+            <summary>
+            Get Designation By Id
+            </summary>
+            <param name="id">Designation ID</param>
+            <returns>Designation found for given ID</returns>
+        </member>
+        <member name="T:Platform.Web.Api.NotificationSystem.NotificationStore">
+            <summary>
+            No more usage of redis in-memory cache
+            This is not consistent.
+            Memory cache needs more care and its not just about throwing things, knowing the limited resources.
+            this would work much better with distributed cache but again, limited resources.
+            </summary>
+        </member>
+    </members>
+</doc>

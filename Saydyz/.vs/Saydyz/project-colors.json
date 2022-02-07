@@ -1,0 +1,31 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "1d5de7b7-42d9-47b8-916c-bdf52b4108c2": {
+      "ProjectGuid": "1d5de7b7-42d9-47b8-916c-bdf52b4108c2",
+      "DisplayName": "Platform.Web.Api",
+      "ColorIndex": 0
+    },
+    "bd20ea9c-d6e7-4c15-8f8a-b933f79cb592": {
+      "ProjectGuid": "bd20ea9c-d6e7-4c15-8f8a-b933f79cb592",
+      "DisplayName": "Platform.Data.Repositories",
+      "ColorIndex": 1
+    },
+    "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3": {
+      "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
+      "DisplayName": "Miscellaneous Files",
+      "ColorIndex": -1
+    },
+    "86ed987d-d1af-4a4f-955e-b13541514a2e": {
+      "ProjectGuid": "86ed987d-d1af-4a4f-955e-b13541514a2e",
+      "DisplayName": "Platform.Data.Model",
+      "ColorIndex": 2
+    },
+    "a5d6fa4a-99ed-4bfe-ba47-d7f4db4d5a02": {
+      "ProjectGuid": "a5d6fa4a-99ed-4bfe-ba47-d7f4db4d5a02",
+      "DisplayName": "Platform.Services",
+      "ColorIndex": 3
+    }
+  },
+  "NextColorIndex": 4
+}
