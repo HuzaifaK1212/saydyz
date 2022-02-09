@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Platform.Data.Model.Order
 {
-    internal class OrderItem : BaseEntity
+    public class OrderItem : BaseEntity
     {
         public string Quantity { get; set; }
         public string Price { get; set; }

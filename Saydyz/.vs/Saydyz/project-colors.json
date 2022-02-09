@@ -25,7 +25,17 @@
       "ProjectGuid": "a5d6fa4a-99ed-4bfe-ba47-d7f4db4d5a02",
       "DisplayName": "Platform.Services",
       "ColorIndex": 3
+    },
+    "1293dae5-59af-49c8-bd89-a16ed2eb8a15": {
+      "ProjectGuid": "1293dae5-59af-49c8-bd89-a16ed2eb8a15",
+      "DisplayName": "Platform.Web.Api",
+      "ColorIndex": 4
+    },
+    "9bfc3b07-a9d9-4f9e-b182-f8128f0cb462": {
+      "ProjectGuid": "9bfc3b07-a9d9-4f9e-b182-f8128f0cb462",
+      "DisplayName": "Platform.Utilities",
+      "ColorIndex": 5
     }
   },
-  "NextColorIndex": 4
+  "NextColorIndex": 6
 }

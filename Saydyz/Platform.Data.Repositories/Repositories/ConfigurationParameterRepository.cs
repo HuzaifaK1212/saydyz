@@ -1,13 +1,8 @@
-﻿using Platform.Data.Model.Status;
+﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 using Platform.Data.Model.Configuration;
 using Platform.Data.Repositories.Context;
 using Platform.Data.Repositories.Interfaces;
-using Platform.Utilities.Exceptions;
-using Platform.Utilities.UserSession;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Configuration;
-using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -15,15 +10,11 @@ namespace Platform.Data.Repositories
 {
     public class ConfigurationParameterRepository : BaseRepository<ConfigurationParameter, ConfigurationContext>, IConfigurationParameterRepository
     {
-
-        private readonly IUserSession userSession;
         public DbSet<ConfigurationParameter> ConfigurationParameteres { get; set; }
 
-        public ConfigurationParameterRepository(IUnitOfWork<ConfigurationContext> uow, IConfiguration configuration, IUserSession userSession) : base(uow)
+        public ConfigurationParameterRepository(IUnitOfWork<ConfigurationContext> uow, IConfiguration configuration) : base(uow)
         {
             var configContext = (ConfigurationContext)Context;
-
-            this.userSession = userSession;
             this.ConfigurationParameteres  = configContext.ConfigurationParameters;
         }
 

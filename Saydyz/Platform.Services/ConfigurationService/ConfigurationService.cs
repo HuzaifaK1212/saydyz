@@ -1,28 +1,25 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Platform.Data.Model.Configuration;
+﻿using Platform.Data.Model.Configuration;
 using Platform.Data.Repositories.Context;
 using Platform.Data.Repositories.Interfaces;
 using Platform.Utilities;
-using Platform.Utilities.UserSession;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace Platform.Services.ConfigurationService
 {
     public class ConfigurationService : IConfigurationService
     {
 
-        private readonly IUserSession UserSession;
-        private IUserRepository UserRepo;
+
 
         private IConfigurationProfileRepository ConfigurationProfileRepo;
         private IConfigurationParameterRepository ConfigurationParameterRepo;
 
-        public ConfigurationService(IUserSession userSession, IUserRepository userRepo, IConfigurationProfileRepository configurationProfileRepo, IConfigurationParameterRepository configurationParameterRepo)
+        public ConfigurationService(IConfigurationProfileRepository configurationProfileRepo, IConfigurationParameterRepository configurationParameterRepo)
         {
-            this.UserSession = userSession;
-            this.UserRepo = userRepo;
+
 
             this.ConfigurationProfileRepo = configurationProfileRepo;
             this.ConfigurationParameterRepo = configurationParameterRepo;
@@ -144,8 +141,6 @@ namespace Platform.Services.ConfigurationService
             ConfigurationProfile.Description = m.Description;
             ConfigurationProfile.Active = m.Active;
 
-
-            ConfigurationProfile.UpdatedBy = UserSession.LoginUser.Id;
             ConfigurationProfile.UpdatedOn = DateTime.UtcNow;
 
             ConfigurationProfileRepo.Update(m);
@@ -208,7 +203,6 @@ namespace Platform.Services.ConfigurationService
                 if (parameter.Id == 0)
                 {
                     //add
-                    parameter.CreatedBy = UserSession.LoginUser.Id;
                     parameter.CreatedOn = DateTime.UtcNow;
                     parameter.Active = true;
 
@@ -227,8 +221,6 @@ namespace Platform.Services.ConfigurationService
                     p.Value = parameter.Value;
                     p.Type = parameter.Type;
 
-
-                    p.UpdatedBy = UserSession.LoginUser.Id;
                     p.UpdatedOn = DateTime.UtcNow;
                     p.Active = true;
 

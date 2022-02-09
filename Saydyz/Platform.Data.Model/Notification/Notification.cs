@@ -1,5 +1,4 @@
-﻿using Platform.Data.Model.Users;
-using System;
+﻿using System;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Platform.Data.Model.Notification

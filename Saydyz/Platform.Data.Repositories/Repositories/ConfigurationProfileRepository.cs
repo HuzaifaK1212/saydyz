@@ -1,9 +1,8 @@
-﻿using Platform.Data.Model.Configuration;
+﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
+using Platform.Data.Model.Configuration;
 using Platform.Data.Repositories.Context;
 using Platform.Data.Repositories.Interfaces;
-using Platform.Utilities.UserSession;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Configuration;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,16 +13,15 @@ namespace Platform.Data.Repositories
     public class ConfigurationProfileRepository : BaseRepository<ConfigurationProfile, ConfigurationContext>, IConfigurationProfileRepository
     {
 
-        private readonly IUserSession userSession;
         public DbSet<ConfigurationProfile> ConfigurationProfiles { get; set; }
 
         private string KEY;
 
-        public ConfigurationProfileRepository(IUnitOfWork<ConfigurationContext> uow, IConfiguration configuration, IUserSession userSession) : base(uow)
+        public ConfigurationProfileRepository(IUnitOfWork<ConfigurationContext> uow, IConfiguration configuration) : base(uow)
         {
             var configContext = (ConfigurationContext)Context;
 
-            this.userSession = userSession;
+
             this.ConfigurationProfiles = configContext.ConfigurationProfiles;
 
             this.KEY = configuration["ConfigurationProfile"];
@@ -147,13 +145,7 @@ namespace Platform.Data.Repositories
 
         public async Task<int> AddConfigurationProfile(ConfigurationProfile m)
         {
-            m.CreatedBy = userSession.LoginUser.Id;
-            m.CreatedOn = DateTime.UtcNow;
-            m.Active = true;
-
-            return await ConfigurationProfiles.AddAsync(m)
-                .ContinueWith(p => _uow.Commit())
-                .ContinueWith(saved => saved.Result > 0 ? m.Id : 0);
+            return 0;
         }
 
         public async Task<int> GetConfigurationProfileCountByKey(string key)

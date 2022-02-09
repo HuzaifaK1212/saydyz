@@ -1,0 +1,15 @@
+E:\Repositories\Saydyz-Platform\Saydyz\Platform.Data.Model\bin\Debug\net5.0\Platform.Data.Model.deps.json
+E:\Repositories\Saydyz-Platform\Saydyz\Platform.Data.Model\bin\Debug\net5.0\Platform.Data.Model.runtimeconfig.json
+E:\Repositories\Saydyz-Platform\Saydyz\Platform.Data.Model\bin\Debug\net5.0\Platform.Data.Model.runtimeconfig.dev.json
+E:\Repositories\Saydyz-Platform\Saydyz\Platform.Data.Model\bin\Debug\net5.0\Platform.Data.Model.dll
+E:\Repositories\Saydyz-Platform\Saydyz\Platform.Data.Model\bin\Debug\net5.0\ref\Platform.Data.Model.dll
+E:\Repositories\Saydyz-Platform\Saydyz\Platform.Data.Model\bin\Debug\net5.0\Platform.Data.Model.pdb
+E:\Repositories\Saydyz-Platform\Saydyz\Platform.Data.Model\obj\Debug\net5.0\Platform.Data.Model.GeneratedMSBuildEditorConfig.editorconfig
+E:\Repositories\Saydyz-Platform\Saydyz\Platform.Data.Model\obj\Debug\net5.0\Platform.Data.Model.AssemblyInfoInputs.cache
+E:\Repositories\Saydyz-Platform\Saydyz\Platform.Data.Model\obj\Debug\net5.0\Platform.Data.Model.AssemblyInfo.cs
+E:\Repositories\Saydyz-Platform\Saydyz\Platform.Data.Model\obj\Debug\net5.0\Platform.Data.Model.csproj.CoreCompileInputs.cache
+E:\Repositories\Saydyz-Platform\Saydyz\Platform.Data.Model\obj\Debug\net5.0\Platform.Data.Model.dll
+E:\Repositories\Saydyz-Platform\Saydyz\Platform.Data.Model\obj\Debug\net5.0\ref\Platform.Data.Model.dll
+E:\Repositories\Saydyz-Platform\Saydyz\Platform.Data.Model\obj\Debug\net5.0\Platform.Data.Model.pdb
+E:\Repositories\Saydyz-Platform\Saydyz\Platform.Data.Model\obj\Debug\net5.0\Platform.Data.Model.genruntimeconfig.cache
+E:\Repositories\Saydyz-Platform\Saydyz\Platform.Data.Model\obj\Debug\net5.0\Platform.Data.Model.csproj.AssemblyReference.cache

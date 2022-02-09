@@ -1,8 +1,4 @@
-﻿using Platform.Data.Model.Status;
-using Platform.Data.Model.Configuration;
-using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using Platform.Data.Model.Configuration;
 using System.Threading.Tasks;
 
 namespace Platform.Data.Repositories.Interfaces
