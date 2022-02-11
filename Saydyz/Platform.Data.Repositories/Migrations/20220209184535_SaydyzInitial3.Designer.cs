@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Platform.Data.Repositories.Context;
 
 namespace Platform.Data.Repositories.Migrations
 {
     [DbContext(typeof(OrderContext))]
-    partial class OrderContextModelSnapshot : ModelSnapshot
+    [Migration("20220209184535_SaydyzInitial3")]
+    partial class SaydyzInitial3
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -133,6 +135,9 @@ namespace Platform.Data.Repositories.Migrations
                     b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int>("OrderId")
+                        .HasColumnType("int");
+
                     b.Property<string>("PhoneNo")
                         .HasColumnType("nvarchar(max)");
 
@@ -145,6 +150,9 @@ namespace Platform.Data.Repositories.Migrations
                     b.HasKey("Id");
 
                     b.HasIndex("CustomerTypeId");
+
+                    b.HasIndex("OrderId")
+                        .IsUnique();
 
                     b.ToTable("Customer");
                 });
@@ -411,9 +419,6 @@ namespace Platform.Data.Repositories.Migrations
                     b.Property<DateTime>("CreatedOn")
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("CustomerId")
-                        .HasColumnType("int");
-
                     b.Property<string>("DeliveryCharge")
                         .HasColumnType("nvarchar(max)");
 
@@ -436,8 +441,6 @@ namespace Platform.Data.Repositories.Migrations
                         .HasColumnType("datetime2");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("CustomerId");
 
                     b.ToTable("Order");
                 });
@@ -507,7 +510,15 @@ namespace Platform.Data.Repositories.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.HasOne("Platform.Data.Model.Order.Order", "Order")
+                        .WithOne("Customer")
+                        .HasForeignKey("Platform.Data.Model.Customer.Customer", "OrderId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.Navigation("CustomerType");
+
+                    b.Navigation("Order");
                 });
 
             modelBuilder.Entity("Platform.Data.Model.Flavors.Flavor", b =>
@@ -530,17 +541,6 @@ namespace Platform.Data.Repositories.Migrations
                         .IsRequired();
 
                     b.Navigation("LogRequest");
-                });
-
-            modelBuilder.Entity("Platform.Data.Model.Order.Order", b =>
-                {
-                    b.HasOne("Platform.Data.Model.Customer.Customer", "Customer")
-                        .WithMany()
-                        .HasForeignKey("CustomerId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Customer");
                 });
 
             modelBuilder.Entity("Platform.Data.Model.Order.OrderItem", b =>
@@ -574,6 +574,8 @@ namespace Platform.Data.Repositories.Migrations
 
             modelBuilder.Entity("Platform.Data.Model.Order.Order", b =>
                 {
+                    b.Navigation("Customer");
+
                     b.Navigation("OrderItems");
                 });
 #pragma warning restore 612, 618

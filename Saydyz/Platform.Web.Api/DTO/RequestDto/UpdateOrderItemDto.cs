@@ -6,6 +6,5 @@
         public string Price { get; set; }
         public int FlavorId { get; set; }
         public bool IsPromo { get; set; }
-        public int OrderId { get; set; }
     }
 }

@@ -14,6 +14,5 @@ namespace Platform.Data.Model.Order
         public int OrderId { get; set; }
         public virtual Order Order { get; set; }
         public bool IsPromo { get; set; }
-
     }
 }

@@ -11,7 +11,7 @@ namespace Platform.Data.Model.Order
         {
             OrderItems = new HashSet<OrderItem>();
         }
-        public string OrderId { get; set; }
+        public string OrderCode { get; set; }
         public int CustomerId { get; set; }
         public virtual Customer.Customer Customer { get; set; }
         public string Channel { get; set; }

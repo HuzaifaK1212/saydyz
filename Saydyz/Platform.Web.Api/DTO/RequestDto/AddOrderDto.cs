@@ -2,13 +2,14 @@
 
 namespace Platform.Web.Api.DTO.RequestDto
 {
-    public class AddOrderDto : BaseDto
+    public class AddOrderDto
     {
         public AddOrderDto()
         {
             OrderItems = new HashSet<AddOrderItemDto>();
         }
-        public string OrderId { get; set; }
+        public string OrderCode { get; set; }
+        public string CreatedOn { get; set; }
         public virtual AddCustomerDto Customer { get; set; }
         public string Channel { get; set; }
         public string TotalPrice { get; set; }

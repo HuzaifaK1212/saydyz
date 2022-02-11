@@ -18,6 +18,7 @@ namespace Platform.Web.Api.MapperProfiles
             CreateMap<OrderItem, AddOrderItemDto>().ReverseMap();
 
             CreateMap<Flavor, FlavorDto>().ReverseMap();
+            CreateMap<ItemType, ItemTypeDto>().ReverseMap();
 
             CreateMap<Customer, CustomerDto>().ReverseMap();
             CreateMap<Customer, AddCustomerDto>().ReverseMap();

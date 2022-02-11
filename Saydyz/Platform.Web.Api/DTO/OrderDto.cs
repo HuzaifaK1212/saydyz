@@ -8,8 +8,7 @@ namespace Platform.Web.Api.DTO
         {
             OrderItems = new HashSet<OrderItemDto>();
         }
-        public string OrderId { get; set; }
-        public int CustomerId { get; set; }
+        public string OrderCode { get; set; }
         public virtual CustomerDto Customer { get; set; }
         public string Channel { get; set; }
         public string TotalPrice { get; set; }

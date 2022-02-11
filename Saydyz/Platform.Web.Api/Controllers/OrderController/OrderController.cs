@@ -10,6 +10,7 @@ using Platform.Utilities;
 using Platform.Web.Api.DTO;
 using Platform.Web.Api.DTO.RequestDto;
 using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace Platform.Web.Api.Controllers
@@ -191,9 +192,16 @@ namespace Platform.Web.Api.Controllers
             try
             {
                 var query = await orderService.GetAllOrders();
+                List<OrderDto> orderList = mapper.Map<List<OrderDto>>(query.Data);
+                
                 if (query.Success)
                 {
-                    return Ok(query);
+                    return Ok(new Response<List<OrderDto>>()
+                    {
+                        Success = query.Success,
+                        Message = $"{orderList.Count} fetched successfully",
+                        Data = orderList
+                    });
                 }
                 else
                 {
