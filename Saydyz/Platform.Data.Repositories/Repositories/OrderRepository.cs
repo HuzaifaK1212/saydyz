@@ -2,6 +2,7 @@
 using Platform.Data.Model.Customer;
 using Platform.Data.Model.Flavors;
 using Platform.Data.Model.Order;
+using Platform.Data.Model.Order.Customer;
 using Platform.Data.Repositories.Context;
 using Platform.Data.Repositories.Interfaces;
 using System;
@@ -19,6 +20,8 @@ namespace Platform.Data.Repositories.Repositories
         private DbSet<Customer> Customer;
         private DbSet<CustomerType> CustomerType;
         private DbSet<Flavor> Flavor;
+        private DbSet<Area> Area;
+        private DbSet<Channel> Channel;
 
         public OrderRepository(IUnitOfWork<OrderContext> uow) : base(uow)
         {
@@ -28,6 +31,8 @@ namespace Platform.Data.Repositories.Repositories
             Customer = context.Customer;
             CustomerType = context.CustomerType;
             Flavor = context.Flavor;
+            Area = context.Area;
+            Channel = context.Channel;
 
             Order.AsNoTracking();
         }
@@ -57,6 +62,7 @@ namespace Platform.Data.Repositories.Repositories
         {
             return await Customer
                             .Include(x => x.CustomerType)
+                            .Include(x => x.Area)
                             .ToListAsync();
         }
 
@@ -95,9 +101,12 @@ namespace Platform.Data.Repositories.Repositories
             return await Order
                             .Include(x => x.Customer)
                                 .ThenInclude(xx => xx.CustomerType)
+                            .Include(x => x.Customer)
+                                .ThenInclude(xx => xx.Area)
                             .Include(x => x.OrderItems)
                                 .ThenInclude(xx => xx.Flavor)
                                     .ThenInclude(xxx => xxx.ItemType)
+                            .Include(x => x.Channel)
                             .ToListAsync();
         }
 
@@ -106,6 +115,7 @@ namespace Platform.Data.Repositories.Repositories
         {
             return await Customer
                             .Include(x => x.CustomerType)
+                            .Include(x => x.Area)
                             .Where(x => x.PhoneNo == phoneNo)
                             .ToListAsync();
         }
@@ -113,6 +123,14 @@ namespace Platform.Data.Repositories.Repositories
         public async Task<Order> GetOrderViaId(int id)
         {
             return await Order
+                            .Include(x => x.Customer)
+                                .ThenInclude(xx => xx.Area)
+                            .Include(x => x.Customer)
+                                .ThenInclude(xx => xx.CustomerType)
+                            .Include(x => x.OrderItems)
+                                .ThenInclude(xx => xx.Flavor)
+                                    .ThenInclude(xxx => xxx.ItemType)
+                            .Include(x => x.Channel)
                             .FirstOrDefaultAsync(x => x.Id == id);
         }
 
@@ -141,6 +159,18 @@ namespace Platform.Data.Repositories.Repositories
             Customer.Update(customer);
             var saved = _uow.Commit();
             return saved > 0 ? customer : null;
+        }
+
+        public async Task<List<Area>> GetAllAreas()
+        {
+            return await Area
+                            .ToListAsync();
+        }
+
+        public async Task<List<Channel>> GetAllChannels()
+        {
+            return await Channel
+                            .ToListAsync();
         }
     }
 }

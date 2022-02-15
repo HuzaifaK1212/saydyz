@@ -1,6 +1,7 @@
 ﻿using Platform.Data.Model.Customer;
 using Platform.Data.Model.Flavors;
 using Platform.Data.Model.Order;
+using Platform.Data.Model.Order.Customer;
 using Platform.Utilities;
 using System;
 using System.Collections.Generic;
@@ -16,6 +17,7 @@ namespace Platform.Services.OrderService
         Task<Response<List<Order>>> GetAllOrders();
         Task<Response<Order>> GetOrderViaId(int id);
         Task<Response<Order>> AddOrder(Order order);
+        Task<Response<List<Order>>> GetOrderViaCustomerPhoneNo(string phoneNo);
         Task<Response<Order>> UpdateOrder(Order order);
 
         // Model: OrderItem
@@ -32,7 +34,12 @@ namespace Platform.Services.OrderService
         Task<Response<Customer>> AddCustomer(Customer customer);
         Task<Response<List<Customer>>> GetAllCustomers();
         Task<Response<List<CustomerType>>> GetAllCustomerTypes();
-        Task<Response<List<Customer>>> GetCustomerViaPhoneNo(string phoneNo);
         Task<Response<Customer>> UpdateCustomer(Customer customer);
+
+        // Model: Area
+        Task<Response<List<Area>>> GetAllAreas();
+
+        // Model: Channel
+        Task<Response<List<Channel>>> GetAllChannels();
     }
 }

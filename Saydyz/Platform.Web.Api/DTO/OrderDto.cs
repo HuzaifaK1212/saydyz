@@ -10,7 +10,7 @@ namespace Platform.Web.Api.DTO
         }
         public string OrderCode { get; set; }
         public virtual CustomerDto Customer { get; set; }
-        public string Channel { get; set; }
+        public ChannelDto Channel { get; set; }
         public string TotalPrice { get; set; }
         public string Discount { get; set; }
         public string DeliveryCharge { get; set; }

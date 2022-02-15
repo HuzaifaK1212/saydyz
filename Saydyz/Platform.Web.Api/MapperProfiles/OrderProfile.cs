@@ -2,6 +2,7 @@
 using Platform.Data.Model.Customer;
 using Platform.Data.Model.Flavors;
 using Platform.Data.Model.Order;
+using Platform.Data.Model.Order.Customer;
 using Platform.Web.Api.DTO;
 using Platform.Web.Api.DTO.RequestDto;
 
@@ -25,6 +26,9 @@ namespace Platform.Web.Api.MapperProfiles
             CreateMap<Customer, UpdateCustomerDto>().ReverseMap();
             CreateMap<CustomerType, CustomerTypeDto>().ReverseMap();
             CreateMap<CustomerType, AddCustomerTypeDto>().ReverseMap();
+
+            CreateMap<Area, AreaDto>().ReverseMap();
+            CreateMap<Channel, ChannelDto>().ReverseMap();
 
         }
     }

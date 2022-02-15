@@ -3,6 +3,7 @@ using Microsoft.Extensions.Configuration;
 using Platform.Data.Model.Customer;
 using Platform.Data.Model.Flavors;
 using Platform.Data.Model.Order;
+using Platform.Data.Model.Order.Customer;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -32,5 +33,7 @@ namespace Platform.Data.Repositories.Context
         public DbSet<Customer> Customer { get; set; }
         public DbSet<CustomerType> CustomerType { get; set; }
         public DbSet<ItemType> ItemType { get; set; }
+        public DbSet<Area> Area { get; set; }
+        public DbSet<Channel> Channel { get; set; }
     }
 }

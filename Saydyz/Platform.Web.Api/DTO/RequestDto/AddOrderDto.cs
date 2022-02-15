@@ -11,7 +11,7 @@ namespace Platform.Web.Api.DTO.RequestDto
         public string OrderCode { get; set; }
         public string CreatedOn { get; set; }
         public virtual AddCustomerDto Customer { get; set; }
-        public string Channel { get; set; }
+        public int ChannelId { get; set; }
         public string TotalPrice { get; set; }
         public string Discount { get; set; }
         public string DeliveryCharge { get; set; }

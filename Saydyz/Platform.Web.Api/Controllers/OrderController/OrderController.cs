@@ -216,14 +216,15 @@ namespace Platform.Web.Api.Controllers
 
         [HttpGet]
         [Route("api/order/customer/{phoneNo}")]
-        public async Task<IActionResult> GetCustomerViaPhoneNo([FromRoute] string phoneNo)
+        public async Task<IActionResult> GetOrdersViaCustomerPhoneNo([FromRoute] string phoneNo)
         {
             try
             {
-                var query = await orderService.GetCustomerViaPhoneNo(phoneNo);
+                var query = await orderService.GetOrderViaCustomerPhoneNo(phoneNo);
+                OrderDto customerOrders = mapper.Map<OrderDto>(query.Data);
                 if (query.Success)
                 {
-                    return Ok(query);
+                    return Ok(customerOrders);
                 }
                 else
                 {
@@ -243,6 +244,50 @@ namespace Platform.Web.Api.Controllers
             try
             {
                 var query = await orderService.GetOrderViaId(id);
+                if (query.Success)
+                {
+                    return Ok(query);
+                }
+                else
+                {
+                    return BadRequest(query);
+                }
+            }
+            catch (Exception ex)
+            {
+                return ErrorHandling(ex);
+            }
+        }
+
+        [HttpGet]
+        [Route("api/order/area/all")]
+        public async Task<IActionResult> GetAllAreas()
+        {
+            try
+            {
+                var query = await orderService.GetAllAreas();
+                if (query.Success)
+                {
+                    return Ok(query);
+                }
+                else
+                {
+                    return BadRequest(query);
+                }
+            }
+            catch (Exception ex)
+            {
+                return ErrorHandling(ex);
+            }
+        }
+
+        [HttpGet]
+        [Route("api/order/channel/all")]
+        public async Task<IActionResult> GetAllChannels()
+        {
+            try
+            {
+                var query = await orderService.GetAllChannels();
                 if (query.Success)
                 {
                     return Ok(query);

@@ -1,6 +1,7 @@
 ﻿using Platform.Data.Model.Customer;
 using Platform.Data.Model.Flavors;
 using Platform.Data.Model.Order;
+using Platform.Data.Model.Order.Customer;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -32,5 +33,11 @@ namespace Platform.Data.Repositories.Interfaces
         Task<List<CustomerType>> GetAllCustomerTypes();
         Task<List<Customer>> GetCustomerViaPhoneNo(string phoneNo);
         Task<Customer> UpdateCustomer(Customer customer);
+
+        // Model: Area
+        Task<List<Area>> GetAllAreas();
+
+        // Model: Channel
+        Task<List<Channel>> GetAllChannels();
     }
 }

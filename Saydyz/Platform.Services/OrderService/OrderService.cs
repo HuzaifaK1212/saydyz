@@ -1,6 +1,7 @@
 ﻿using Platform.Data.Model.Customer;
 using Platform.Data.Model.Flavors;
 using Platform.Data.Model.Order;
+using Platform.Data.Model.Order.Customer;
 using Platform.Data.Repositories.Interfaces;
 using Platform.Utilities;
 using System;
@@ -231,6 +232,74 @@ namespace Platform.Services.OrderService
             }
         }
 
+        public async Task<Response<List<Area>>> GetAllAreas()
+        {
+            try
+            {
+                var query = await orderRepository.GetAllAreas();
+                if (query.Count > 0)
+                {
+
+                    return new Response<List<Area>>()
+                    {
+                        Success = true,
+                        Message = $"Successfully fetched areas. Count: {query.Count}",
+                        Data = query
+                    };
+                }
+                else
+                {
+                    return new Response<List<Area>>()
+                    {
+                        Success = true,
+                        Message = "No areas found in Database"
+                    };
+                }
+            }
+            catch (Exception ex)
+            {
+                return new Response<List<Area>>()
+                {
+                    Success = false,
+                    Message = $"Failed fetching areas. Reason: {ex.Message}"
+                };
+            }
+        }
+
+        public async Task<Response<List<Channel>>> GetAllChannels()
+        {
+            try
+            {
+                var query = await orderRepository.GetAllChannels();
+                if (query.Count > 0)
+                {
+
+                    return new Response<List<Channel>>()
+                    {
+                        Success = true,
+                        Message = $"Successfully fetched channels. Count: {query.Count}",
+                        Data = query
+                    };
+                }
+                else
+                {
+                    return new Response<List<Channel>>()
+                    {
+                        Success = true,
+                        Message = "No channels found in Database"
+                    };
+                }
+            }
+            catch (Exception ex)
+            {
+                return new Response<List<Channel>>()
+                {
+                    Success = false,
+                    Message = $"Failed fetching channels. Reason: {ex.Message}"
+                };
+            }
+        }
+
         public async Task<Response<List<OrderItem>>> GetAllOrderItems()
         {
             try
@@ -334,35 +403,44 @@ namespace Platform.Services.OrderService
             }
         }
 
-        public async Task<Response<List<Customer>>> GetCustomerViaPhoneNo(string phoneNo)
+
+
+        public async Task<Response<List<Order>>> GetOrderViaCustomerPhoneNo(string phoneNo)
         {
             try
             {
-                var query = await orderRepository.GetCustomerViaPhoneNo(phoneNo);
-                if (query.Count > 0)
+                var customers = await orderRepository.GetCustomerViaPhoneNo(phoneNo);
+                List<Order> filteredOrders = new List<Order>();
+                if(customers.Count > 0)
                 {
-                    return new Response<List<Customer>>()
+                    var orders = await orderRepository.GetAllOrders();
+                    filteredOrders = orders.Where(x => x.Customer.PhoneNo == phoneNo).ToList();
+
+                }
+
+                if (filteredOrders.Count > 0)
+                {
+                    return new Response<List<Order>>()
                     {
                         Success = true,
                         Message = $"Successfully fetched all customers with Contact: {phoneNo}. Count: {query.Count}",
-                        Data = query
+                        Data = filteredOrders
                     };
                 }
                 else
                 {
                     {
-                        return new Response<List<Customer>>()
+                        return new Response<List<Order>>()
                         {
                             Success = true,
-                            Message = $"No customers found Contact: {phoneNo}.",
-                            Data = query
+                            Message = $"No customers found Contact: {phoneNo}."
                         };
                     }
                 }
             }
             catch (Exception ex)
             {
-                return new Response<List<Customer>>()
+                return new Response<List<Order>>()
                 {
                     Success = true,
                     Message = $"Failed to fetch customers with Contact: {phoneNo}.Reason: {ex.Message}"
@@ -459,5 +537,7 @@ namespace Platform.Services.OrderService
                 };
             }
         }
+
+        
     }
 }

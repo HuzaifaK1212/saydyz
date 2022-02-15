@@ -9,7 +9,7 @@ namespace Platform.Web.Api.DTO.RequestDto
             OrderItems = new HashSet<UpdateOrderItemDto>();
         }
         public virtual AddCustomerDto Customer { get; set; }
-        public string Channel { get; set; }
+        public int ChannelId { get; set; }
         public string TotalPrice { get; set; }
         public string Discount { get; set; }
         public string DeliveryCharge { get; set; }
