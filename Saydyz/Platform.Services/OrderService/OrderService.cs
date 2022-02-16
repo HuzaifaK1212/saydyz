@@ -423,7 +423,7 @@ namespace Platform.Services.OrderService
                     return new Response<List<Order>>()
                     {
                         Success = true,
-                        Message = $"Successfully fetched all customers with Contact: {phoneNo}. Count: {query.Count}",
+                        Message = $"Successfully fetched all customers with Contact: {phoneNo}. Count: {filteredOrders.Count}",
                         Data = filteredOrders
                     };
                 }
@@ -538,6 +538,39 @@ namespace Platform.Services.OrderService
             }
         }
 
-        
+        public async Task<Response<List<ItemType>>> GetAllItemTypes()
+        {
+            try
+            {
+                var query = await orderRepository.GetAllItemTypes();
+                if (query.Count > 0)
+                {
+                    return new Response<List<ItemType>>()
+                    {
+                        Success = true,
+                        Message = $"Successfully fetched all Item Types. Count: {query.Count}",
+                        Data = query
+                    };
+                }
+                else
+                {
+                    return new Response<List<ItemType>>()
+                    {
+                        Success = true,
+                        Message = $"No Item types found in database.",
+                        Data = query
+                    };
+                }
+
+            }
+            catch (Exception ex)
+            {
+                return new Response<List<ItemType>>()
+                {
+                    Success = false,
+                    Message = $"Failed to fetch Item types. Reason: {ex.Message}"
+                };
+            }
+        }
     }
 }

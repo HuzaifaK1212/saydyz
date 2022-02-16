@@ -43,8 +43,7 @@ namespace Platform.Services.LogService
             }
             catch (Exception ex)
             {
-                //ToDo: log it in server
-                //or email it to developer/admin
+                Console.WriteLine($"Error generating End log. Reason: {ex.Message}");
             }
         }
 

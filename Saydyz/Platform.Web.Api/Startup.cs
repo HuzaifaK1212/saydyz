@@ -27,7 +27,7 @@ namespace Platform.Web.Api
     public class Startup
     {
         public IConfiguration Configuration { get; private set; }
-        private Microsoft.AspNetCore.Hosting.IHostingEnvironment CurrentEnvironment { get; set; }
+        private Microsoft.AspNetCore.Hosting.IWebHostEnvironment CurrentEnvironment { get; set; }
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;

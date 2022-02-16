@@ -82,9 +82,15 @@ namespace Platform.Web.Api.Controllers
             try
             {
                 var query = await orderService.GetAllCustomerTypes();
+                List<CustomerTypeDto> customerTypes = mapper.Map<List<CustomerTypeDto>>(query.Data);
                 if (query.Success)
                 {
-                    return Ok(query);
+                    return Ok(new Response<List<CustomerTypeDto>>()
+                    {
+                        Success = query.Success,
+                        Message = query.Message,
+                        Data = customerTypes
+                    });
                 }
                 else
                 {
@@ -104,9 +110,15 @@ namespace Platform.Web.Api.Controllers
             try
             {
                 var query = await orderService.GetAllFlavors();
+                List<FlavorDto> flavors = mapper.Map<List<FlavorDto>>(query.Data);
                 if (query.Success)
                 {
-                    return Ok(query);
+                    return Ok(new Response<List<FlavorDto>>()
+                    {
+                        Success = query.Success,
+                        Message = query.Message,
+                        Data = flavors
+                    });
                 }
                 else
                 {
@@ -221,10 +233,15 @@ namespace Platform.Web.Api.Controllers
             try
             {
                 var query = await orderService.GetOrderViaCustomerPhoneNo(phoneNo);
-                OrderDto customerOrders = mapper.Map<OrderDto>(query.Data);
+                List<OrderDto> customerOrders = mapper.Map<List<OrderDto>>(query.Data);
                 if (query.Success)
                 {
-                    return Ok(customerOrders);
+                    return Ok(new Response<List<OrderDto>>()
+                    {
+                        Success = query.Success,
+                        Message = $"{customerOrders.Count} fetched successfully",
+                        Data = customerOrders
+                    });
                 }
                 else
                 {
@@ -291,6 +308,34 @@ namespace Platform.Web.Api.Controllers
                 if (query.Success)
                 {
                     return Ok(query);
+                }
+                else
+                {
+                    return BadRequest(query);
+                }
+            }
+            catch (Exception ex)
+            {
+                return ErrorHandling(ex);
+            }
+        }
+
+        [HttpGet]
+        [Route("api/order/itemtype/all")]
+        public async Task<IActionResult> GetAllItemTypes()
+        {
+            try
+            {
+                var query = await orderService.GetAllItemTypes();
+                ItemTypeDto itemTypes = mapper.Map<ItemTypeDto>(query.Data);
+                if (query.Success)
+                {
+                    return Ok(new Response<ItemTypeDto>()
+                    {
+                        Success = query.Success,
+                        Message = query.Message,
+                        Data = itemTypes
+                    });
                 }
                 else
                 {

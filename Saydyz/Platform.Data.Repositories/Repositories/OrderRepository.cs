@@ -20,6 +20,7 @@ namespace Platform.Data.Repositories.Repositories
         private DbSet<Customer> Customer;
         private DbSet<CustomerType> CustomerType;
         private DbSet<Flavor> Flavor;
+        private DbSet<ItemType> ItemType;
         private DbSet<Area> Area;
         private DbSet<Channel> Channel;
 
@@ -31,6 +32,7 @@ namespace Platform.Data.Repositories.Repositories
             Customer = context.Customer;
             CustomerType = context.CustomerType;
             Flavor = context.Flavor;
+            ItemType = context.ItemType;
             Area = context.Area;
             Channel = context.Channel;
 
@@ -170,6 +172,12 @@ namespace Platform.Data.Repositories.Repositories
         public async Task<List<Channel>> GetAllChannels()
         {
             return await Channel
+                            .ToListAsync();
+        }
+
+        public async Task<List<ItemType>> GetAllItemTypes()
+        {
+            return await ItemType
                             .ToListAsync();
         }
     }

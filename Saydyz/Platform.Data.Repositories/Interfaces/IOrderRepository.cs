@@ -39,5 +39,8 @@ namespace Platform.Data.Repositories.Interfaces
 
         // Model: Channel
         Task<List<Channel>> GetAllChannels();
+
+        // Model: ItemType
+        Task<List<ItemType>> GetAllItemTypes();
     }
 }

@@ -7,6 +7,7 @@ using Platform.Data.Model.Flavors;
 using Platform.Data.Model.Logs;
 using Platform.Data.Model.Notification;
 using Platform.Data.Model.Order;
+using Platform.Data.Model.Order.Customer;
 using Platform.Utilities.Hash;
 using RestSharp;
 using System;
@@ -33,6 +34,8 @@ namespace Platform.Data.Repositories.Context
             modelBuilder.Entity<Customer>().ToTable("Customer");
             modelBuilder.Entity<CustomerType>().ToTable("CustomerType");
             modelBuilder.Entity<ItemType>().ToTable("ItemType");
+            modelBuilder.Entity<Area>().ToTable("Area");
+            modelBuilder.Entity<Channel>().ToTable("Channel");
 
         }
 
