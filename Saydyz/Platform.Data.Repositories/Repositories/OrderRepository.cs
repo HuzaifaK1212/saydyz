@@ -53,6 +53,13 @@ namespace Platform.Data.Repositories.Repositories
             return saved > 0 ? order : null;
         }
 
+        public async Task<Channel> AddChannel(Channel channel)
+        {
+            Channel.Add(channel);
+            var saved = _uow.Commit();
+            return saved > 0 ? channel : null;
+        }
+
         public async Task<OrderItem> AddOrderItem(OrderItem orderItem)
         {
             OrderItem.Add(orderItem);

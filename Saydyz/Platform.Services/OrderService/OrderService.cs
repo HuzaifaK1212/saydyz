@@ -91,6 +91,50 @@ namespace Platform.Services.OrderService
             }
         }
 
+        public async Task<Response<Channel>> AddChannel(Channel channel)
+        {
+            try
+            {
+                // Fetching all channels to check if the channel is already present
+                var channelCheck = await orderRepository.GetAllChannels();
+                if (channelCheck.Where(x => x.Name.Contains(channel.Name)).FirstOrDefault() != null)
+                {
+                    return new Response<Channel>()
+                    {
+                        Success = false,
+                        Message = "Channel Already Exists",
+                        Data = channelCheck.Where(x => x.Name.Contains(channel.Name)).FirstOrDefault()
+                    };
+                }
+
+                else
+                {
+                    Channel innerChannel = new Channel()
+                    {
+                        Id = 0,
+                        Name = channel.Name,
+                        Code = channel.Name.ToLower().Replace(" ", "_")
+                    };
+                    var query = await orderRepository.AddChannel(innerChannel);
+
+                    return new Response<Channel>()
+                    {
+                        Success = true,
+                        Message = "Channel added successfully",
+                        Data = query
+                    };
+                } 
+            }
+            catch (Exception ex)
+            {
+                return new Response<Channel>()
+                {
+                    Success = true,
+                    Message = $"Channel adding failed. Reason: {ex.Message}"
+                };
+            }
+        }
+
         public async Task<Response<List<Customer>>> GetAllCustomers()
         {
             try

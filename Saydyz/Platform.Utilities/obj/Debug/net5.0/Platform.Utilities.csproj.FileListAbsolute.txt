@@ -15,4 +15,3 @@ E:\Repositories\Saydyz-Platform\Saydyz\Platform.Utilities\obj\Debug\net5.0\Platf
 E:\Repositories\Saydyz-Platform\Saydyz\Platform.Utilities\obj\Debug\net5.0\ref\Platform.Utilities.dll
 E:\Repositories\Saydyz-Platform\Saydyz\Platform.Utilities\obj\Debug\net5.0\Platform.Utilities.pdb
 E:\Repositories\Saydyz-Platform\Saydyz\Platform.Utilities\obj\Debug\net5.0\Platform.Utilities.genruntimeconfig.cache
-E:\Repositories\Saydyz-Platform\Saydyz\Platform.Utilities\obj\Debug\net5.0\Platform.Utilities.csproj.CopyComplete

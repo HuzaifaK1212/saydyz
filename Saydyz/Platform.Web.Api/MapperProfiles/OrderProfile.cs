@@ -29,7 +29,7 @@ namespace Platform.Web.Api.MapperProfiles
 
             CreateMap<Area, AreaDto>().ReverseMap();
             CreateMap<Channel, ChannelDto>().ReverseMap();
-
+            CreateMap<Channel, AddChannelDto>().ReverseMap();
         }
     }
 }

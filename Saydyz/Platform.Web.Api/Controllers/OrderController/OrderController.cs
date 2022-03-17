@@ -398,6 +398,34 @@ namespace Platform.Web.Api.Controllers
             }
         }
 
+        [HttpPost]
+        [Route("api/order/channel/add")]
+        public async Task<IActionResult> AddChannel([FromBody] AddChannelDto addChannel)
+        {
+            try
+            {
+                var query = await orderService.AddChannel(mapper.Map<Channel>(addChannel));
+                ChannelDto _query = mapper.Map<ChannelDto>(query.Data);
+                if (query.Success)
+                {
+                    return Ok(new Response<ChannelDto>()
+                    {
+                        Success = query.Success,
+                        Message = query.Message,
+                        Data = _query
+                    });
+                }
+                else
+                {
+                    return BadRequest(query);
+                }
+            }
+            catch (Exception ex)
+            {
+                return ErrorHandling(ex);
+            }
+        }
+
         [HttpPut]
         [Route("api/order/update")]
         public async Task<IActionResult> UpdateOrder([FromBody] UpdateOrderDto updateOrder)

@@ -41,6 +41,7 @@ namespace Platform.Services.OrderService
 
         // Model: Channel
         Task<Response<List<Channel>>> GetAllChannels();
+        Task<Response<Channel>> AddChannel(Channel channel);
 
         // Model: ItemType
         Task<Response<List<ItemType>>> GetAllItemTypes();
